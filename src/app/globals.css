@@ -330,7 +330,26 @@ footer span {
   padding-top: 14px;
 }
 
-.social-item strong {
+.social-name {
+  align-items: center;
+  display: flex;
+  gap: 11px;
+}
+
+.social-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 28px;
+  width: 28px;
+}
+
+.social-icon svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.social-name strong {
   color: #777480;
   font-size: clamp(18px, 1.55vw, 26px);
   font-weight: 400;
@@ -384,6 +403,14 @@ footer span {
 .project-card.is-open {
   border-color: rgba(123, 108, 246, 0.34);
   box-shadow: 0 22px 54px rgba(76, 65, 145, 0.11);
+}
+
+.project-card.is-placeholder {
+  box-shadow: none;
+}
+
+.project-card.is-placeholder:hover {
+  border-color: var(--line);
 }
 
 .project-cover {
@@ -475,105 +502,28 @@ footer span {
   min-height: 46px;
 }
 
-.project-actions {
+.project-link-hint {
   align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-  margin-top: auto;
-}
-
-.project-action {
-  background: transparent;
   color: var(--purple);
+  display: flex;
   font-size: 12px;
   font-weight: 600;
-  padding: 0;
+  gap: 4px;
+  margin-top: auto;
+  padding-top: 8px;
+  transition: gap 180ms ease;
 }
 
-.product-link {
-  color: #888490;
+.project-card.is-linkable:hover .project-link-hint {
+  gap: 7px;
 }
 
-.product-link:hover {
-  color: var(--purple);
+.project-card.is-linkable .project-cover img {
+  transition: transform 360ms ease;
 }
 
-.funnel,
-.project-detail {
-  border-top: 1px solid var(--line);
-  margin-top: 26px;
-  overflow: hidden;
-  padding-top: 24px;
-}
-
-.funnel-heading {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.funnel-heading strong {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.funnel-list {
-  margin-top: 24px;
-}
-
-.funnel-stage {
-  align-items: center;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 52px 1fr 88px;
-  min-height: 50px;
-}
-
-.conversion {
-  align-items: center;
-  color: #aaa4cf;
-  display: flex;
-  flex-direction: column;
-  font-size: 9px;
-  gap: 2px;
-}
-
-.conversion b {
-  color: var(--purple);
-  font-size: 9px;
-}
-
-.funnel-bar {
-  border-radius: 3px;
-  height: 16px;
-}
-
-.funnel-meta {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.funnel-meta strong {
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.funnel-meta span {
-  color: var(--faint);
-  font-size: 9px;
-}
-
-.project-detail span {
-  color: var(--purple);
-}
-
-.project-detail p {
-  color: #9c99a3;
-  font-size: 12px;
-  line-height: 1.8;
-  margin: 12px 0 0;
+.project-card.is-linkable:hover .project-cover img {
+  transform: scale(1.025);
 }
 
 .small-products-heading {
@@ -665,23 +615,19 @@ footer span {
   min-height: 42px;
 }
 
-.small-product-action {
+.small-product-link-hint {
   align-items: center;
-  align-self: flex-start;
   color: var(--purple);
-  display: inline-flex;
+  display: flex;
   font-size: 12px;
   font-weight: 600;
-  gap: 5px;
+  gap: 4px;
   margin-top: 22px;
+  transition: gap 180ms ease;
 }
 
-.small-product-action span {
-  transition: transform 180ms ease;
-}
-
-.small-product-action:hover span {
-  transform: translate(2px, -2px);
+.small-product-card.is-linkable:hover .small-product-link-hint {
+  gap: 7px;
 }
 
 footer {

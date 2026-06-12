@@ -502,6 +502,13 @@ footer span {
   min-height: 46px;
 }
 
+.project-footer {
+  align-items: center;
+  display: flex;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
 .project-link-hint {
   align-items: center;
   color: var(--purple);
@@ -509,13 +516,24 @@ footer span {
   font-size: 12px;
   font-weight: 600;
   gap: 4px;
-  margin-top: auto;
-  padding-top: 8px;
   transition: gap 180ms ease;
 }
 
 .project-card.is-linkable:hover .project-link-hint {
   gap: 7px;
+}
+
+.funnel-toggle {
+  background: transparent;
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0;
+  transition: opacity 180ms ease;
+}
+
+.funnel-toggle:hover {
+  opacity: 0.7;
 }
 
 .project-card.is-linkable .project-cover img {
@@ -524,6 +542,79 @@ footer span {
 
 .project-card.is-linkable:hover .project-cover img {
   transform: scale(1.025);
+}
+
+.funnel,
+.project-detail {
+  border-top: 1px solid var(--line);
+  margin-top: 26px;
+  overflow: hidden;
+  padding-top: 24px;
+}
+
+.funnel-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.funnel-heading span {
+  color: var(--purple);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.funnel-heading strong {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.funnel-list {
+  margin-top: 24px;
+}
+
+.funnel-stage {
+  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 52px 1fr 88px;
+  min-height: 50px;
+}
+
+.conversion {
+  align-items: center;
+  color: #aaa4cf;
+  display: flex;
+  flex-direction: column;
+  font-size: 9px;
+  gap: 2px;
+}
+
+.conversion b {
+  color: var(--purple);
+  font-size: 9px;
+}
+
+.funnel-bar {
+  border-radius: 3px;
+  height: 16px;
+}
+
+.funnel-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.funnel-meta strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.funnel-meta span {
+  color: var(--faint);
+  font-size: 9px;
 }
 
 .small-products-heading {

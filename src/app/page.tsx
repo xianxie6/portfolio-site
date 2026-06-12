@@ -1,6 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+
+const funnel = [
+  { value: "6,493", label: "展示次数", width: "100%", color: "#6758E8" },
+  { value: "688", label: "产品页查看", width: "78%", color: "#7B6CF6", rate: "10.6%" },
+  { value: "85", label: "首次下载", width: "58%", color: "#988DF7", rate: "12.4%" },
+  { value: "99", label: "付费销量", width: "40%", color: "#B8B0FA", rate: "116.5%" },
+];
 
 const metrics = [
   { value: "11", unit: "年", label: "UX 产品设计经验" },
@@ -17,7 +25,7 @@ const projects = [
     tags: ["iOS App", "独立产品", "已上架"],
     description: "从 0 到 1 独立完成，App Store 自然覆盖 4 个全球区域",
     gradient: "linear-gradient(135deg, #D9D5FF 0%, #EEEAFE 100%)",
-    banner: "/mochi-banner.png",
+    banner: "/mochi-banner.webp",
     bannerAlt: "Mochi 应用横幅",
     href: "https://apps.apple.com/cn/app/mochi/id6755081548",
   },
@@ -28,7 +36,7 @@ const projects = [
     tags: ["Next.js", "全栈", "华为云部署"],
     description: "设计师独立完成前端 + 后台数据库 + 内容管理系统，已部署至华为云独立服务器",
     gradient: "linear-gradient(135deg, #E4E5FF 0%, #F0F1FF 100%)",
-    banner: "/商业化项目.png",
+    banner: "/商业化项目.webp",
     bannerAlt: "商业化项目横幅",
     href: null,
   },
@@ -40,7 +48,7 @@ const projects = [
     description:
       "可复用的 Codex Skill，从零搭建任意行业的完整认知体系，已被其他开发者 fork 使用。包含数据库构建、竞品分析、账号研究、知识地图生成、情报订阅五大模块",
     gradient: "linear-gradient(135deg, #DDE9FF 0%, #EEF4FF 100%)",
-    banner: "/industry-banner.png",
+    banner: "/industry-banner.webp",
     bannerAlt: "行业知识系统构建引擎横幅",
     href: "https://ux-ai-skills-os.pages.dev/#4-ai-%E6%8A%80%E8%83%BD%E6%88%90%E9%95%BF%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%80%BB%E8%A7%88",
   },
@@ -53,7 +61,7 @@ const smallProducts = [
     eyebrow: "WEB CAMERA · CREATIVE TOOL",
     tags: ["互动网页", "拍立得", "AI 辅助开发"],
     description: "一款可以即时拍摄、生成并收藏拍立得照片的趣味相机网页。",
-    image: "/instant-camera.png",
+    image: "/instant-camera.webp",
     imageAlt: "拍立得相机产品界面",
     href: "https://pailide-three.vercel.app/",
   },
@@ -63,7 +71,7 @@ const smallProducts = [
     eyebrow: "PROMPT LIBRARY · WEB",
     tags: ["提示词库", "NotebookLM", "效率工具"],
     description: "收集并分类高质量 NotebookLM 提示词，支持按场景快速查找与复制。",
-    image: "/notebooklm-prompts.png",
+    image: "/notebooklm-prompts.webp",
     imageAlt: "NotebookLM 提示词库网站界面",
     href: "https://notebook-prompts.vercel.app/",
   },
@@ -73,7 +81,7 @@ const smallProducts = [
     eyebrow: "CHILDREN'S ENGLISH · APP",
     tags: ["儿童英语", "语音识别", "游戏化学习"],
     description: "通过语音互动和冒险地图，帮助儿童练习并掌握英语单词。",
-    image: "/phonosia-english-app.png",
+    image: "/phonosia-english-app.webp",
     imageAlt: "声语大陆儿童英语单词 App 界面",
     href: null,
   },
@@ -168,6 +176,46 @@ function SocialIcon({ platform }: { platform: string }) {
   );
 }
 
+function Funnel() {
+  return (
+    <motion.div
+      className="funnel"
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: "auto" }}
+      exit={{ opacity: 0, height: 0 }}
+      transition={{ duration: 0.35 }}
+    >
+      <div className="funnel-heading">
+        <span>APP STORE CONVERSION</span>
+        <strong>自然流量转化漏斗</strong>
+      </div>
+      <div className="funnel-list">
+        {funnel.map((item, index) => (
+          <div className="funnel-stage" key={item.label}>
+            {item.rate && (
+              <div className="conversion">
+                <span>↓</span>
+                <b>{item.rate}</b>
+              </div>
+            )}
+            <motion.div
+              className="funnel-bar"
+              initial={{ width: 0 }}
+              animate={{ width: item.width }}
+              transition={{ duration: 0.55, delay: index * 0.08 }}
+              style={{ backgroundColor: item.color }}
+            />
+            <div className="funnel-meta">
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
 function SectionTitle({ label, note }: { label: string; note: string }) {
   return (
     <div className="section-title">
@@ -179,6 +227,8 @@ function SectionTitle({ label, note }: { label: string; note: string }) {
 }
 
 export default function Home() {
+  const [openProject, setOpenProject] = useState<string | null>(null);
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -348,11 +398,28 @@ export default function Home() {
                     ))}
                   </div>
                   <p>{project.description}</p>
-                  {project.href && (
-                    <div className="project-link-hint">
-                      查看详情 <span>↗</span>
-                    </div>
-                  )}
+                  <div className="project-footer">
+                    {project.id === "mochi" && (
+                      <button
+                        className="funnel-toggle"
+                        aria-expanded={openProject === "mochi"}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setOpenProject(openProject === "mochi" ? null : "mochi");
+                        }}
+                      >
+                        {openProject === "mochi" ? "收起数据 ↑" : "查看转化数据 →"}
+                      </button>
+                    )}
+                    {project.href && project.id !== "mochi" && (
+                      <div className="project-link-hint">
+                        查看详情 <span>↗</span>
+                      </div>
+                    )}
+                  </div>
+                  <AnimatePresence>
+                    {openProject === "mochi" && project.id === "mochi" && <Funnel />}
+                  </AnimatePresence>
                 </div>
               </motion.article>
             ))}

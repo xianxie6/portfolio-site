@@ -173,12 +173,6 @@ export default function Home() {
         <nav>
           <button onClick={() => scrollTo("work")}>Projects</button>
           <button onClick={() => scrollTo("about")}>About</button>
-          <a href="https://www.bilibili.com/" target="_blank" rel="noreferrer">
-            Blog
-          </a>
-          <a className="contact-link" href="mailto:zhangxian54@126.com">
-            Contact
-          </a>
         </nav>
       </header>
 

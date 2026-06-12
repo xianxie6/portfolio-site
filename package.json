@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack --port 3001",
     "build": "next build --turbopack",
     "preview": "npx --yes serve out -p 3001",
-    "deploy": "npm run build && wrangler deploy",
+    "deploy": "npm run build && wrangler pages deploy out --project-name portfolio-site --branch main",
     "start": "next start",
     "lint": "eslint"
   },

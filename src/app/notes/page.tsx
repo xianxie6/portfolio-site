@@ -78,12 +78,12 @@ export default async function NotesPage() {
           </span>
         </Link>
         <nav>
-          <a href="/#work" style={{ color: "#aaa7b1", fontSize: "13px", padding: "8px 0" }}>
+          <Link href="/#work" style={{ color: "#aaa7b1", fontSize: "13px", padding: "8px 0" }}>
             Projects
-          </a>
-          <a href="/#about" style={{ color: "#aaa7b1", fontSize: "13px", padding: "8px 0" }}>
+          </Link>
+          <Link href="/#about" style={{ color: "#aaa7b1", fontSize: "13px", padding: "8px 0" }}>
             About
-          </a>
+          </Link>
           <Link
             href="/notes"
             style={{ color: "#7b6cf6", fontSize: "13px", padding: "8px 0", fontWeight: 600 }}

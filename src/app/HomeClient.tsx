@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
 
 const funnel = [
@@ -206,9 +207,9 @@ export function HomeClient({ projects, smallProducts }: HomeClientProps) {
         <nav>
           <button onClick={() => scrollTo("work")}>Projects</button>
           <button onClick={() => scrollTo("about")}>About</button>
-          <a href="/notes" style={{ color: "#aaa7b1", fontSize: "13px", padding: "8px 0" }}>
+          <Link href="/notes" style={{ color: "#aaa7b1", fontSize: "13px", padding: "8px 0" }}>
             Notes
-          </a>
+          </Link>
           <a
             href="mailto:zhangxian54@126.com"
             style={{

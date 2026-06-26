@@ -206,6 +206,9 @@ export function HomeClient({ projects, smallProducts }: HomeClientProps) {
         <nav>
           <button onClick={() => scrollTo("work")}>Projects</button>
           <button onClick={() => scrollTo("about")}>About</button>
+          <a href="/notes" style={{ color: "#aaa7b1", fontSize: "13px", padding: "8px 0" }}>
+            Notes
+          </a>
           <a
             href="mailto:zhangxian54@126.com"
             style={{
@@ -587,7 +590,7 @@ export function HomeClient({ projects, smallProducts }: HomeClientProps) {
 
               {/* ── Quote ── */}
               <div style={{ marginTop: "24px", paddingTop: "20px" }}>
-                <div style={{ color: "#E86C3A", fontSize: "32px", lineHeight: 1, marginBottom: "8px" }}>"</div>
+                <div style={{ color: "#E86C3A", fontSize: "32px", lineHeight: 1, marginBottom: "8px" }}>&ldquo;</div>
                 <p style={{ fontSize: "14px", color: "#444", lineHeight: 1.6, margin: "0 0 12px" }}>
                   Good design is not just what it looks like, but how it helps people achieve more.
                 </p>

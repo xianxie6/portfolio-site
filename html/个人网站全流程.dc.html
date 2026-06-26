@@ -100,30 +100,38 @@ body{font-family:'Noto Sans SC',sans-serif;}
 <section data-label="案例卡片法" data-screen-label="06 案例卡片法" style="background:var(--lt);display:flex;flex-direction:column;padding:72px 140px 60px;">
   <h2 style="font-size:52px;font-weight:700;color:var(--tb);margin-bottom:16px;">案例卡片法：每个项目填6个字段</h2>
   <p style="font-size:28px;color:var(--tm);margin-bottom:44px;">这是整个过程里最重要、也最容易被跳过的一步</p>
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;flex:1;">
-    <div style="background:#fff;border-radius:12px;padding:32px;display:flex;gap:20px;">
-      <span style="font-size:40px;font-weight:900;color:var(--or);flex-shrink:0;">1</span>
-      <div><div style="font-size:28px;font-weight:700;color:var(--tb);margin-bottom:8px;">项目名 + 一句话定位</div><p style="font-size:24px;color:var(--tm);">是什么、给谁用</p></div>
+  <div style="display:flex;gap:24px;flex:1;align-items:stretch;">
+    <div style="flex:1;background:#fff;border-radius:16px;padding:32px 36px;display:flex;flex-direction:column;justify-content:center;gap:28px;box-shadow:0 2px 24px rgba(0,0,0,0.04);">
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:32px;font-weight:900;color:var(--or);flex-shrink:0;line-height:1.2;">1</span>
+        <div><div style="font-size:24px;font-weight:700;color:var(--tb);margin-bottom:4px;">项目名 + 一句话定位</div><p style="font-size:20px;color:var(--tm);">是什么、给谁用</p></div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:32px;font-weight:900;color:var(--or);flex-shrink:0;line-height:1.2;">2</span>
+        <div><div style="font-size:24px;font-weight:700;color:var(--tb);margin-bottom:4px;">我的角色</div><p style="font-size:20px;color:var(--tm);">具体做了什么，不是"参与了"</p></div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;padding:12px 16px;margin:0 -16px;background:rgba(249,115,22,0.06);border-radius:10px;border-left:3px solid var(--or);">
+        <span style="font-size:32px;font-weight:900;color:var(--or);flex-shrink:0;line-height:1.2;">3</span>
+        <div><div style="font-size:24px;font-weight:700;color:var(--tb);margin-bottom:4px;">关键决策 2-3条</div><p style="font-size:20px;color:var(--or);font-weight:600;">← 这是灵魂</p></div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:32px;font-weight:900;color:var(--or);flex-shrink:0;line-height:1.2;">4</span>
+        <div><div style="font-size:24px;font-weight:700;color:var(--tb);margin-bottom:4px;">AI工作流</div><p style="font-size:20px;color:var(--tm);">用了什么工具、怎么拆任务</p></div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:32px;font-weight:900;color:var(--or);flex-shrink:0;line-height:1.2;">5</span>
+        <div><div style="font-size:24px;font-weight:700;color:var(--tb);margin-bottom:4px;">可量化结果</div><p style="font-size:20px;color:var(--tm);">数字最有说服力</p></div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <span style="font-size:32px;font-weight:900;color:var(--or);flex-shrink:0;line-height:1.2;">6</span>
+        <div><div style="font-size:24px;font-weight:700;color:var(--tb);margin-bottom:4px;">素材清单</div><p style="font-size:20px;color:var(--tm);">截图 · 视频 · demo链接</p></div>
+      </div>
     </div>
-    <div style="background:#fff;border-radius:12px;padding:32px;display:flex;gap:20px;">
-      <span style="font-size:40px;font-weight:900;color:var(--or);flex-shrink:0;">2</span>
-      <div><div style="font-size:28px;font-weight:700;color:var(--tb);margin-bottom:8px;">我的角色</div><p style="font-size:24px;color:var(--tm);">具体做了什么，不是"参与了"</p></div>
+    <div style="flex:1;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 24px rgba(0,0,0,0.04);overflow:hidden;display:flex;align-items:center;justify-content:center;">
+      <img src="./uploads/case-card-mochi.png" alt="Mochi 案例卡片示例" style="width:100%;height:100%;object-fit:contain;border-radius:8px;">
     </div>
-    <div style="background:#fff;border-radius:12px;padding:32px;display:flex;gap:20px;border:2px solid var(--or);">
-      <span style="font-size:40px;font-weight:900;color:var(--or);flex-shrink:0;">3</span>
-      <div><div style="font-size:28px;font-weight:700;color:var(--tb);margin-bottom:8px;">关键决策 2-3条</div><p style="font-size:24px;color:var(--or);font-weight:600;">← 这是灵魂</p></div>
-    </div>
-    <div style="background:#fff;border-radius:12px;padding:32px;display:flex;gap:20px;">
-      <span style="font-size:40px;font-weight:900;color:var(--or);flex-shrink:0;">4</span>
-      <div><div style="font-size:28px;font-weight:700;color:var(--tb);margin-bottom:8px;">AI工作流</div><p style="font-size:24px;color:var(--tm);">用了什么工具、怎么拆任务</p></div>
-    </div>
-    <div style="background:#fff;border-radius:12px;padding:32px;display:flex;gap:20px;">
-      <span style="font-size:40px;font-weight:900;color:var(--or);flex-shrink:0;">5</span>
-      <div><div style="font-size:28px;font-weight:700;color:var(--tb);margin-bottom:8px;">可量化结果</div><p style="font-size:24px;color:var(--tm);">数字最有说服力</p></div>
-    </div>
-    <div style="background:#fff;border-radius:12px;padding:32px;display:flex;gap:20px;">
-      <span style="font-size:40px;font-weight:900;color:var(--or);flex-shrink:0;">6</span>
-      <div><div style="font-size:28px;font-weight:700;color:var(--tb);margin-bottom:8px;">素材清单</div><p style="font-size:24px;color:var(--tm);">截图 · 视频 · demo链接</p></div>
+    <div style="flex:1;background:#fff;border-radius:16px;padding:16px;box-shadow:0 2px 24px rgba(0,0,0,0.04);overflow:hidden;display:flex;align-items:center;justify-content:center;">
+      <img src="./uploads/case-card-grid.png" alt="案例卡片九宫格" style="width:100%;height:100%;object-fit:contain;border-radius:8px;">
     </div>
   </div>
 </section>
@@ -552,9 +560,8 @@ class Component extends DCLogic {
       const now = Date.now();
       if (now - lastSpawn > 28) { this._spawnTrail(x, y); lastSpawn = now; }
       stopTimer = setTimeout(() => {
-        const right = x > window.innerWidth / 2;
-        el.innerHTML = this._arrowSVG(right);
-        el.style.transform = `translate(${right ? '-6px' : '-50px'}, -28px)`;
+        el.innerHTML = this._arrowSVG();
+        el.style.transform = 'translate(-27px, -62px)';
         el.style.opacity = '1';
       }, 130);
     };
@@ -562,19 +569,13 @@ class Component extends DCLogic {
     this._cleanCursor = () => { document.removeEventListener('mousemove', onMove); clearTimeout(stopTimer); };
   }
 
-  _arrowSVG(right) {
-    const r = right
-      ? `<rect x="5" y="0" width="2" height="2" fill="#FFE600"/>
-         <rect x="6" y="2" width="3" height="2" fill="#FFE600"/>
-         <rect x="0" y="3" width="9" height="3" fill="#FFE600"/>
-         <rect x="6" y="6" width="3" height="2" fill="#FFE600"/>
-         <rect x="5" y="8" width="2" height="2" fill="#FFE600"/>`
-      : `<rect x="2" y="0" width="2" height="2" fill="#FFE600"/>
-         <rect x="0" y="2" width="3" height="2" fill="#FFE600"/>
-         <rect x="0" y="3" width="9" height="3" fill="#FFE600"/>
-         <rect x="0" y="6" width="3" height="2" fill="#FFE600"/>
-         <rect x="2" y="8" width="2" height="2" fill="#FFE600"/>`;
-    return `<svg width="54" height="60" viewBox="0 0 9 10" style="image-rendering:pixelated;shape-rendering:crispEdges;filter:drop-shadow(0 0 8px #FFE600) drop-shadow(0 0 2px #FFE600);">${r}</svg>`;
+  _arrowSVG() {
+    const up = `<rect x="3" y="0" width="3" height="2" fill="#FFE600"/>
+         <rect x="2" y="2" width="5" height="2" fill="#FFE600"/>
+         <rect x="1" y="4" width="7" height="2" fill="#FFE600"/>
+         <rect x="3" y="6" width="3" height="2" fill="#FFE600"/>
+         <rect x="3" y="8" width="3" height="2" fill="#FFE600"/>`;
+    return `<svg width="54" height="60" viewBox="0 0 9 10" style="image-rendering:pixelated;shape-rendering:crispEdges;filter:drop-shadow(0 0 8px #FFE600) drop-shadow(0 0 2px #FFE600);">${up}</svg>`;
   }
 
   _spawnTrail(x, y) {

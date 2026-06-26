@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+:root{--dk:#0f0e17;--lt:#f3f1ec;--or:#f97316;--pu:#9580d4;--tw:#e8e3d8;--tm:#7a7570;--tb:#1a1826;--bl:#38bdf8;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Noto Sans SC',sans-serif;}
+</style>
+</helmet>
+
+<x-import component-from-global-scope="deck-stage" from="./deck-stage.js" width="1920" height="1080" hint-size="100%,100%" data-uneditable="">
+
+<section data-label="封面" data-screen-label="01 封面" style="background:var(--dk);display:flex;flex-direction:column;justify-content:center;padding:100px 140px 80px;">
+  <div style="font-size:24px;color:var(--or);letter-spacing:4px;font-weight:500;margin-bottom:48px;">零基础 · AI全流程</div>
+  <h1 style="font-size:108px;font-weight:900;color:var(--tw);line-height:1.05;margin-bottom:24px;">用AI做个人网站</h1>
+  <h2 style="font-size:80px;font-weight:700;color:var(--or);line-height:1.05;margin-bottom:24px;">从需求到上线</h2>
+  <p style="font-size:34px;color:rgba(249,115,22,0.65);font-weight:400;margin-bottom:40px;">（前端、登录、后台管理、数据库、部署全流程拆解）</p>
+  <p style="font-size:34px;color:var(--tm);font-weight:300;">Claude · Codex · Cloudflare 全流程拆解</p>
+  <div style="margin-top:64px;display:flex;align-items:center;gap:24px;">
+    <div style="width:48px;height:3px;background:var(--or);"></div>
+    <span style="font-size:26px;color:var(--tm);">没写一行代码</span>
+  </div>
+</section>
+
+
+
+<section data-label="核心三角" data-screen-label="03 核心三角" style="background:var(--dk);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 140px;">
+  <p style="font-size:30px;color:var(--tm);margin-bottom:72px;letter-spacing:2px;">记住这个三角关系，贯穿全程</p>
+  <div style="display:flex;align-items:center;gap:80px;">
+    <div style="text-align:center;">
+      <div style="font-size:88px;font-weight:900;color:var(--or);">Claude</div>
+      <div style="font-size:42px;font-weight:700;color:var(--tw);margin-top:12px;">负责「想」</div>
+      <div style="font-size:26px;color:var(--tm);margin-top:10px;">素材整理 · 项目md编写<br>网站的技术规划 · 需求输出提示词</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;align-items:center;">
+      <div style="width:100px;height:2px;background:#333;"></div>
+      <div style="font-size:28px;color:#333;">＋</div>
+      <div style="width:100px;height:2px;background:#333;"></div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:88px;font-weight:900;color:var(--pu);">Codex</div>
+      <div style="font-size:42px;font-weight:700;color:var(--tw);margin-top:12px;">负责「做」</div>
+      <div style="font-size:26px;color:var(--tm);margin-top:10px;">写代码 · 测试 · 部署</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;align-items:center;">
+      <div style="width:100px;height:2px;background:#333;"></div>
+      <div style="font-size:28px;color:#333;">＋</div>
+      <div style="width:100px;height:2px;background:#333;"></div>
+    </div>
+    <div style="text-align:center;">
+      <div style="font-size:88px;font-weight:900;color:var(--bl);">Cloudflare</div>
+      <div style="font-size:42px;font-weight:700;color:var(--tw);margin-top:12px;">负责「跑」</div>
+      <div style="font-size:26px;color:var(--tm);margin-top:10px;">数据库 · 部署 · CDN</div>
+    </div>
+  </div>
+</section>
+
+<section data-label="工具全景" data-screen-label="04 工具全景" style="background:var(--lt);display:flex;flex-direction:column;padding:80px 140px 60px;">
+  <h2 style="font-size:54px;font-weight:700;color:var(--tb);margin-bottom:52px;">一共10个工具，按阶段分布</h2>
+  <div style="display:flex;gap:40px;flex:1;">
+    <div style="flex:1;background:#fff;border-radius:16px;padding:40px;border-top:6px solid var(--or);">
+      <div style="font-size:24px;color:var(--or);font-weight:700;letter-spacing:2px;margin-bottom:28px;">THINK · 思考规划</div>
+      <div style="font-size:34px;font-weight:700;color:var(--tb);margin-bottom:10px;">Claude</div>
+      <p style="font-size:24px;color:var(--tm);line-height:1.7;margin-bottom:24px;">素材整理 · 项目md编写<br>网站的技术规划 · 需求输出提示词</p>
+      <div style="font-size:34px;font-weight:700;color:var(--tb);margin-bottom:10px;">Excalidraw</div>
+      <p style="font-size:24px;color:var(--tm);">需求规划图 / 灵感板</p>
+    </div>
+    <div style="flex:1;background:#fff;border-radius:16px;padding:40px;border-top:6px solid var(--pu);">
+      <div style="font-size:24px;color:var(--pu);font-weight:700;letter-spacing:2px;margin-bottom:28px;">DESIGN · 设计</div>
+      <div style="font-size:34px;font-weight:700;color:var(--tb);margin-bottom:10px;">Claude Design</div>
+      <p style="font-size:24px;color:var(--tm);margin-bottom:24px;">设计稿生成 / 迭代5个版本</p>
+      <div style="font-size:34px;font-weight:700;color:var(--tb);margin-bottom:10px;">GPT/Codex</div>
+      <p style="font-size:24px;color:var(--tm);">完整效果图 / 插画风头像</p>
+    </div>
+    <div style="flex:1;background:#fff;border-radius:16px;padding:40px;border-top:6px solid var(--bl);">
+      <div style="font-size:24px;color:var(--bl);font-weight:700;letter-spacing:2px;margin-bottom:28px;">BUILD · 开发部署</div>
+      <div style="font-size:34px;font-weight:700;color:var(--tb);margin-bottom:10px;">Codex + Claude Code</div>
+      <p style="font-size:24px;color:var(--tm);margin-bottom:24px;">写代码 / 建数据库 / 部署</p>
+      <div style="font-size:34px;font-weight:700;color:var(--tb);margin-bottom:10px;">Cloudflare D1 · Workers</div>
+      <p style="font-size:24px;color:var(--tm);">数据库 + 运行环境 + 域名</p>
+    </div>
+  </div>
+</section>
+
+<section data-label="第一章：需求" data-screen-label="05 第一章" style="background:var(--or);display:flex;flex-direction:column;justify-content:center;padding:100px 140px 80px;">
+  <div style="font-size:200px;font-weight:900;color:rgba(0,0,0,0.1);line-height:1;position:absolute;right:120px;top:50%;transform:translateY(-50%);">01</div>
+  <div style="font-size:28px;color:rgba(255,255,255,0.6);font-weight:500;letter-spacing:4px;margin-bottom:32px;">CHAPTER ONE</div>
+  <h2 style="font-size:96px;font-weight:900;color:#fff;margin-bottom:24px;">需求阶段</h2>
+  <p style="font-size:52px;color:rgba(255,255,255,0.75);font-weight:300;">先想清楚要什么</p>
+</section>
+
+<section data-label="案例卡片法" data-screen-label="06 案例卡片法" style="background:var(--lt);display:flex;flex-direction:column;padding:72px 140px 60px;">
+  <h2 style="font-size:52px;font-weight:700;color:var(--tb);margin-bottom:16px;">案例卡片法：每个项目填6个字段</h2>
+  <p style="font-size:28px;color:var(--tm);margin-bottom:44px;">这是整个过程里最重要、也最容易被跳过的一步</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;flex:1;">
+    <div style="background:#fff;border-radius:12px;padding:32px;display:flex;gap:20px;">
+      <span style="font-size:40px;font-weight:900;color:var(--or);flex-shrink:0;">1</span>
+      <div><div style="font-size:28px;font-weight:700;color:var(--tb);margin-bottom:8px;">项目名 + 一句话定位</div><p style="font-size:24px;color:var(--tm);">是什么、给谁用</p></div>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:32px;display:flex;gap:20px;">
+      <span style="font-size:40px;font-weight:900;color:var(--or);flex-shrink:0;">2</span>
+      <div><div style="font-size:28px;font-weight:700;color:var(--tb);margin-bottom:8px;">我的角色</div><p style="font-size:24px;color:var(--tm);">具体做了什么，不是"参与了"</p></div>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:32px;display:flex;gap:20px;border:2px solid var(--or);">
+      <span style="font-size:40px;font-weight:900;color:var(--or);flex-shrink:0;">3</span>
+      <div><div style="font-size:28px;font-weight:700;color:var(--tb);margin-bottom:8px;">关键决策 2-3条</div><p style="font-size:24px;color:var(--or);font-weight:600;">← 这是灵魂</p></div>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:32px;display:flex;gap:20px;">
+      <span style="font-size:40px;font-weight:900;color:var(--or);flex-shrink:0;">4</span>
+      <div><div style="font-size:28px;font-weight:700;color:var(--tb);margin-bottom:8px;">AI工作流</div><p style="font-size:24px;color:var(--tm);">用了什么工具、怎么拆任务</p></div>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:32px;display:flex;gap:20px;">
+      <span style="font-size:40px;font-weight:900;color:var(--or);flex-shrink:0;">5</span>
+      <div><div style="font-size:28px;font-weight:700;color:var(--tb);margin-bottom:8px;">可量化结果</div><p style="font-size:24px;color:var(--tm);">数字最有说服力</p></div>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:32px;display:flex;gap:20px;">
+      <span style="font-size:40px;font-weight:900;color:var(--or);flex-shrink:0;">6</span>
+      <div><div style="font-size:28px;font-weight:700;color:var(--tb);margin-bottom:8px;">素材清单</div><p style="font-size:24px;color:var(--tm);">截图 · 视频 · demo链接</p></div>
+    </div>
+  </div>
+</section>
+
+<section data-label="关键决策" data-screen-label="07 关键决策" style="background:var(--dk);display:flex;flex-direction:column;justify-content:center;padding:100px 140px 80px;">
+  <div style="display:flex;gap:80px;align-items:stretch;">
+    <div style="flex:1;padding:56px;background:rgba(255,255,255,0.04);border-radius:16px;border:1px solid #2a2936;">
+      <div style="font-size:24px;color:var(--tm);letter-spacing:2px;margin-bottom:32px;">简历写的是</div>
+      <p style="font-size:48px;font-weight:700;color:var(--tm);line-height:1.4;">"我设计了<br>一款儿童英语App<br>的UI"</p>
+    </div>
+    <div style="display:flex;align-items:center;font-size:60px;color:var(--or);">→</div>
+    <div style="flex:1;padding:56px;background:rgba(249,115,22,0.1);border-radius:16px;border:2px solid var(--or);">
+      <div style="font-size:24px;color:var(--or);letter-spacing:2px;margin-bottom:32px;">作品集要展示的是</div>
+      <p style="font-size:40px;font-weight:700;color:var(--tw);line-height:1.5;">"付费决策者是家长不是小孩——<br>插画风传递「安全可信」，<br>游戏风让家长觉得在玩游戏"</p>
+    </div>
+  </div>
+  <div style="margin-top:48px;text-align:center;">
+    <span style="font-size:34px;color:var(--tm);">这一句话，比</span>
+    <span style="font-size:40px;font-weight:700;color:var(--or);">"我设计了UI"</span>
+    <span style="font-size:34px;color:var(--tm);">含金量高100倍</span>
+  </div>
+</section>
+
+<section data-label="事实版定位" data-screen-label="08 事实版定位" style="background:var(--lt);display:flex;flex-direction:column;justify-content:center;padding:100px 140px 80px;">
+  <h2 style="font-size:54px;font-weight:700;color:var(--tb);margin-bottom:56px;">个人定位：把形容词换成事实</h2>
+  <div style="display:flex;gap:48px;align-items:stretch;">
+    <div style="flex:1;background:#fff;border-radius:16px;padding:48px;border-top:5px solid #d1cdc7;">
+      <div style="font-size:24px;color:var(--tm);font-weight:700;letter-spacing:2px;margin-bottom:28px;">❌ 第一版（套话版）</div>
+      <p style="font-size:38px;color:#aaa;line-height:1.6;font-style:italic;">"经验丰富的设计师，<br>擅长连接创意与技术"</p>
+      <p style="font-size:24px;color:var(--tm);margin-top:24px;">可以套在任何人身上，等于没说</p>
+    </div>
+    <div style="flex:1;background:#fff;border-radius:16px;padding:48px;border-top:5px solid var(--or);">
+      <div style="font-size:24px;color:var(--or);font-weight:700;letter-spacing:2px;margin-bottom:28px;">✓ 事实版</div>
+      <p style="font-size:38px;color:var(--tb);line-height:1.6;font-weight:500;">"15年UX产品设计师<br>11年专注ToB软件<br>2025年独立用AI做产品<br>一人从需求到上架了一款App"</p>
+    </div>
+  </div>
+  <p style="font-size:32px;color:var(--tm);margin-top:40px;text-align:center;">有事实 · 有数字 · 有具体事件，这才是让人记住你的定位</p>
+</section>
+
+<section data-label="数字痕迹" data-screen-label="09 数字痕迹" style="background:var(--dk);display:flex;flex-direction:column;justify-content:center;padding:100px 140px 80px;">
+  <h2 style="font-size:52px;font-weight:700;color:var(--tw);margin-bottom:20px;">翻你的数字痕迹</h2>
+  <p style="font-size:30px;color:var(--tm);margin-bottom:72px;">回去翻 App Store 后台、GitHub、过去的文档——数据就在那里</p>
+  <div style="display:flex;align-items:center;gap:0;">
+    <div style="text-align:center;padding:0 48px;">
+      <div style="font-size:96px;font-weight:900;color:var(--or);">6,493</div>
+      <div style="font-size:28px;color:var(--tm);margin-top:8px;">次曝光</div>
+    </div>
+    <div style="font-size:48px;color:#2a2936;">→</div>
+    <div style="text-align:center;padding:0 48px;">
+      <div style="font-size:96px;font-weight:900;color:var(--or);">688</div>
+      <div style="font-size:28px;color:var(--tm);margin-top:8px;">次详情页查看</div>
+    </div>
+    <div style="font-size:48px;color:#2a2936;">→</div>
+    <div style="text-align:center;padding:0 48px;">
+      <div style="font-size:96px;font-weight:900;color:var(--or);">85</div>
+      <div style="font-size:28px;color:var(--tm);margin-top:8px;">次下载</div>
+    </div>
+    <div style="font-size:48px;color:#2a2936;">→</div>
+    <div style="text-align:center;padding:0 48px;">
+      <div style="font-size:96px;font-weight:900;color:var(--or);">99</div>
+      <div style="font-size:28px;color:var(--tm);margin-top:8px;">笔付费</div>
+    </div>
+  </div>
+  <div style="margin-top:56px;padding:28px 48px;background:rgba(249,115,22,0.1);border-radius:12px;border-left:4px solid var(--or);">
+    <p style="font-size:32px;color:var(--tw);">GitHub：14 ⭐ star · 4 fork——陌生人觉得有用，主动在用</p>
+  </div>
+</section>
+
+<section data-label="第二章：设计" data-screen-label="10 第二章" style="background:var(--pu);display:flex;flex-direction:column;justify-content:center;padding:100px 140px 80px;">
+  <div style="font-size:200px;font-weight:900;color:rgba(0,0,0,0.1);line-height:1;position:absolute;right:120px;top:50%;transform:translateY(-50%);">02</div>
+  <div style="font-size:28px;color:rgba(255,255,255,0.6);font-weight:500;letter-spacing:4px;margin-bottom:32px;">CHAPTER TWO</div>
+  <h2 style="font-size:96px;font-weight:900;color:#fff;margin-bottom:24px;">设计阶段</h2>
+  <p style="font-size:52px;color:rgba(255,255,255,0.75);font-weight:300;">先出图，再写代码</p>
+</section>
+
+<section data-label="设计语言" data-screen-label="11 设计语言" style="background:var(--lt);display:flex;flex-direction:column;padding:72px 140px 60px;">
+  <h2 style="font-size:52px;font-weight:700;color:var(--tb);margin-bottom:16px;">先提炼设计语言，再让AI生图</h2>
+  <p style="font-size:28px;color:var(--tm);margin-bottom:44px;">根据定位（设计师 + AI + 专业但有温度）筛选出7条视觉方向</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;flex:1;">
+    <div style="display:flex;align-items:center;gap:20px;background:#fff;border-radius:12px;padding:24px 32px;">
+      <span style="font-size:32px;font-weight:900;color:var(--pu);min-width:36px;">1</span>
+      <span style="font-size:28px;color:var(--tb);">整体低饱和色调</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;background:#fff;border-radius:12px;padding:24px 32px;">
+      <span style="font-size:32px;font-weight:900;color:var(--pu);min-width:36px;">2</span>
+      <span style="font-size:28px;color:var(--tb);">贴纸元素 · 动画点缀</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;background:#fff;border-radius:12px;padding:24px 32px;">
+      <span style="font-size:32px;font-weight:900;color:var(--pu);min-width:36px;">3</span>
+      <span style="font-size:28px;color:var(--tb);">像素、数字展现AI语言感</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;background:#fff;border-radius:12px;padding:24px 32px;">
+      <span style="font-size:32px;font-weight:900;color:var(--pu);min-width:36px;">4</span>
+      <span style="font-size:28px;color:var(--tb);">元素悬浮飘动，体现自然感</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;background:#fff;border-radius:12px;padding:24px 32px;">
+      <span style="font-size:32px;font-weight:900;color:var(--pu);min-width:36px;">5</span>
+      <span style="font-size:28px;color:var(--tb);">纸张吊牌卡片风格</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;background:#fff;border-radius:12px;padding:24px 32px;">
+      <span style="font-size:32px;font-weight:900;color:var(--pu);min-width:36px;">6</span>
+      <span style="font-size:28px;color:var(--tb);">浅紫渐变色调</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;background:#fff;border-radius:12px;padding:24px 32px;grid-column:1/-1;">
+      <span style="font-size:32px;font-weight:900;color:var(--pu);min-width:36px;">7</span>
+      <span style="font-size:28px;color:var(--tb);">手写标题字体</span>
+    </div>
+  </div>
+</section>
+
+<section data-label="5版迭代" data-screen-label="12 5版迭代" style="background:var(--dk);display:flex;flex-direction:column;padding:72px 140px 60px;">
+  <h2 style="font-size:52px;font-weight:700;color:var(--tw);margin-bottom:16px;">设计稿迭代了5个版本</h2>
+  <p style="font-size:28px;color:var(--tm);margin-bottom:44px;">关键经验：锁定结构，只改变量——比每次重新描述高效10倍</p>
+  <div style="display:flex;gap:20px;flex:1;align-items:stretch;">
+    <div style="flex:1;background:#1a1928;border-radius:12px;padding:28px;border-top:4px solid #444;">
+      <div style="font-size:24px;font-weight:700;color:#555;margin-bottom:16px;">V1</div>
+      <div style="font-size:26px;font-weight:700;color:var(--tw);margin-bottom:10px;">深色科技风</div>
+      <p style="font-size:24px;color:var(--tm);">太冷了，不像设计师</p>
+    </div>
+    <div style="flex:1;background:#1a1928;border-radius:12px;padding:28px;border-top:4px solid #444;">
+      <div style="font-size:24px;font-weight:700;color:#555;margin-bottom:16px;">V2</div>
+      <div style="font-size:26px;font-weight:700;color:var(--tw);margin-bottom:10px;">浅紫白</div>
+      <p style="font-size:24px;color:var(--tm);">结构定了，配色改对了</p>
+    </div>
+    <div style="flex:1;background:#1a1928;border-radius:12px;padding:28px;border-top:4px solid #444;">
+      <div style="font-size:24px;font-weight:700;color:#555;margin-bottom:16px;">V3</div>
+      <div style="font-size:26px;font-weight:700;color:var(--tw);margin-bottom:10px;">暖橙证件卡风</div>
+      <p style="font-size:24px;color:var(--tm);">加入人物照片和悬挂卡片</p>
+    </div>
+    <div style="flex:1;background:#1a1928;border-radius:12px;padding:28px;border-top:4px solid #444;">
+      <div style="font-size:24px;font-weight:700;color:#555;margin-bottom:16px;">V4</div>
+      <div style="font-size:26px;font-weight:700;color:var(--tw);margin-bottom:10px;">手写签名 + 印章</div>
+      <p style="font-size:24px;color:var(--tm);">更有个人辨识度</p>
+    </div>
+    <div style="flex:1;background:rgba(249,115,22,0.15);border-radius:12px;padding:28px;border-top:4px solid var(--or);">
+      <div style="font-size:24px;font-weight:700;color:var(--or);margin-bottom:16px;">V5 ✓ 定稿</div>
+      <div style="font-size:26px;font-weight:700;color:var(--tw);margin-bottom:10px;">V3 + V4 合并</div>
+      <p style="font-size:24px;color:var(--tm);">橙色证件卡首屏 + 手写签名</p>
+    </div>
+  </div>
+  <div style="margin-top:32px;padding:24px 40px;background:rgba(149,128,212,0.15);border-radius:10px;border-left:4px solid var(--pu);">
+    <p style="font-size:28px;color:var(--tw);">有了设计图，Claude Code 的代码还原准确率高很多——这是给AI的「视觉锚点」</p>
+  </div>
+</section>
+
+<section data-label="第三章：技术选型" data-screen-label="13 第三章" style="background:var(--or);display:flex;flex-direction:column;justify-content:center;padding:100px 140px 80px;">
+  <div style="font-size:200px;font-weight:900;color:rgba(0,0,0,0.1);line-height:1;position:absolute;right:120px;top:50%;transform:translateY(-50%);">03</div>
+  <div style="font-size:28px;color:rgba(255,255,255,0.6);font-weight:500;letter-spacing:4px;margin-bottom:32px;">CHAPTER THREE</div>
+  <h2 style="font-size:96px;font-weight:900;color:#fff;margin-bottom:24px;">技术选型</h2>
+  <p style="font-size:52px;color:rgba(255,255,255,0.75);font-weight:300;">不是越复杂越好，从需求倒推</p>
+</section>
+
+<section data-label="技术架构" data-screen-label="14 技术架构" style="background:var(--lt);display:flex;flex-direction:column;padding:72px 140px 60px;">
+  <h2 style="font-size:52px;font-weight:700;color:var(--tb);margin-bottom:52px;">选型逻辑：从需求倒推技术栈</h2>
+  <div style="display:flex;flex-direction:column;gap:24px;flex:1;justify-content:center;">
+    <div style="display:flex;align-items:center;gap:40px;background:#fff;border-radius:12px;padding:28px 40px;">
+      <div style="font-size:28px;color:var(--tm);min-width:400px;">网站要好看，有动画</div>
+      <div style="font-size:28px;color:var(--or);">→</div>
+      <div style="font-size:30px;font-weight:700;color:var(--tb);">Next.js 15 + Tailwind CSS + Framer Motion</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:40px;background:#fff;border-radius:12px;padding:28px 40px;">
+      <div style="font-size:28px;color:var(--tm);min-width:400px;">能随时添加新项目</div>
+      <div style="font-size:28px;color:var(--or);">→</div>
+      <div style="font-size:30px;font-weight:700;color:var(--tb);">后台管理系统 + 数据库（Cloudflare D1）</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:40px;background:#fff;border-radius:12px;padding:28px 40px;">
+      <div style="font-size:28px;color:var(--tm);min-width:400px;">部署简单，最好免费</div>
+      <div style="font-size:28px;color:var(--or);">→</div>
+      <div style="font-size:30px;font-weight:700;color:var(--tb);">Cloudflare Workers（全链路一个生态）</div>
+    </div>
+  </div>
+  <div style="margin-top:36px;padding:24px 40px;background:rgba(249,115,22,0.08);border-radius:10px;border-left:4px solid var(--or);">
+    <p style="font-size:28px;color:var(--tb);">为什么选 D1 而不是 Supabase？全链路在 Cloudflare 一个生态里，排查问题更容易</p>
+  </div>
+</section>
+
+<section data-label="第四章：Vibe Coding" data-screen-label="15 第四章" style="background:var(--dk);display:flex;flex-direction:column;justify-content:center;padding:100px 140px 80px;">
+  <div style="font-size:200px;font-weight:900;color:rgba(255,255,255,0.04);line-height:1;position:absolute;right:120px;top:50%;transform:translateY(-50%);">04</div>
+  <div style="font-size:28px;color:var(--tm);font-weight:500;letter-spacing:4px;margin-bottom:32px;">CHAPTER FOUR</div>
+  <h2 style="font-size:96px;font-weight:900;color:var(--tw);margin-bottom:24px;">Vibe Coding 实战</h2>
+  <p style="font-size:52px;color:var(--tm);font-weight:300;">分步执行，四步走完全流程</p>
+</section>
+
+<section data-label="四步执行" data-screen-label="16 四步执行" style="background:var(--lt);display:flex;flex-direction:column;padding:72px 140px 60px;">
+  <h2 style="font-size:52px;font-weight:700;color:var(--tb);margin-bottom:52px;">分四步，每步不超过1小时</h2>
+  <div style="display:flex;gap:24px;flex:1;">
+    <div style="flex:1;background:#fff;border-radius:16px;padding:36px;display:flex;flex-direction:column;">
+      <div style="font-size:56px;font-weight:900;color:var(--or);margin-bottom:16px;">01</div>
+      <div style="font-size:30px;font-weight:700;color:var(--tb);margin-bottom:12px;">建数据库</div>
+      <p style="font-size:24px;color:var(--tm);line-height:1.6;">创建D1数据库 · 建projects和articles两张表 · 导入6个项目数据</p>
+      <div style="margin-top:auto;padding-top:20px;font-size:24px;color:var(--or);font-weight:600;">6分钟完成</div>
+    </div>
+    <div style="flex:1;background:#fff;border-radius:16px;padding:36px;display:flex;flex-direction:column;">
+      <div style="font-size:56px;font-weight:900;color:var(--or);margin-bottom:16px;">02</div>
+      <div style="font-size:30px;font-weight:700;color:var(--tb);margin-bottom:12px;">后台登录系统</div>
+      <p style="font-size:24px;color:var(--tm);line-height:1.6;">登录页 · 密码验证 · Session Cookie · middleware路由保护 · 退出登录</p>
+      <div style="margin-top:auto;padding-top:20px;font-size:24px;color:var(--or);font-weight:600;">6分07秒，全部跑通</div>
+    </div>
+    <div style="flex:1;background:#fff;border-radius:16px;padding:36px;display:flex;flex-direction:column;">
+      <div style="font-size:56px;font-weight:900;color:var(--or);margin-bottom:16px;">03</div>
+      <div style="font-size:30px;font-weight:700;color:var(--tb);margin-bottom:12px;">项目管理后台</div>
+      <p style="font-size:24px;color:var(--tm);line-height:1.6;">后台列表页 · 新建/编辑表单 · API接口 · 前台页面动态化</p>
+      <div style="margin-top:auto;padding-top:20px;font-size:24px;color:var(--or);font-weight:600;">时间最长，同时改三层</div>
+    </div>
+    <div style="flex:1;background:#fff;border-radius:16px;padding:36px;display:flex;flex-direction:column;">
+      <div style="font-size:56px;font-weight:900;color:var(--or);margin-bottom:16px;">04</div>
+      <div style="font-size:30px;font-weight:700;color:var(--tb);margin-bottom:12px;">前台数据打通</div>
+      <p style="font-size:24px;color:var(--tm);line-height:1.6;">后台填内容 → D1数据库 → 前台API拉取 → 页面渲染，链路全通</p>
+      <div style="margin-top:auto;padding-top:20px;font-size:24px;color:var(--or);font-weight:600;">从此新增项目不改代码</div>
+    </div>
+  </div>
+</section>
+
+<section data-label="Claude与Codex的分工" data-screen-label="17 分工" style="background:var(--dk);display:flex;flex-direction:column;justify-content:center;padding:100px 140px 80px;">
+  <h2 style="font-size:54px;font-weight:700;color:var(--tw);margin-bottom:56px;">为什么同时用两个AI——各有擅长</h2>
+  <div style="display:flex;gap:64px;align-items:stretch;">
+    <div style="flex:1;background:rgba(249,115,22,0.1);border-radius:16px;padding:52px;border:2px solid var(--or);">
+      <div style="font-size:64px;font-weight:900;color:var(--or);margin-bottom:24px;">Claude</div>
+      <div style="font-size:36px;font-weight:700;color:var(--tw);margin-bottom:20px;">宏观规划 · 内容梳理 · 决策判断</div>
+      <p style="font-size:28px;color:var(--tm);line-height:1.7;">告诉Codex「做什么」和「为什么」<br>遇到冲突，写修复方案<br>把报错结论转化为下一步指令</p>
+    </div>
+    <div style="display:flex;align-items:center;font-size:56px;color:#2a2936;">⟷</div>
+    <div style="flex:1;background:rgba(149,128,212,0.1);border-radius:16px;padding:52px;border:2px solid var(--pu);">
+      <div style="font-size:64px;font-weight:900;color:var(--pu);margin-bottom:24px;">Codex</div>
+      <div style="font-size:36px;font-weight:700;color:var(--tw);margin-bottom:20px;">看代码 · 写代码 · 做技术判断</div>
+      <p style="font-size:28px;color:var(--tm);line-height:1.7;">分析项目结构，提出更优技术方案<br>执行指令，跑测试，部署<br>发现兼容问题并上报</p>
+    </div>
+  </div>
+</section>
+
+<section data-label="Token踩坑" data-screen-label="18 踩坑经验" style="background:var(--lt);display:flex;flex-direction:column;justify-content:center;padding:100px 140px 80px;">
+  <div style="display:flex;gap:80px;align-items:center;">
+    <div style="flex:1;">
+      <div style="font-size:28px;color:var(--or);font-weight:700;letter-spacing:2px;margin-bottom:24px;">前端动画踩坑</div>
+      <h2 style="font-size:60px;font-weight:900;color:var(--tb);line-height:1.2;margin-bottom:32px;">任务越大，AI花在「理解」上的时间越长</h2>
+      <p style="font-size:32px;color:var(--tm);line-height:1.6;margin-bottom:32px;">Claude Code读代码28分钟，token快用完——还没改一个文件</p>
+      <p style="font-size:32px;color:var(--tb);line-height:1.6;">解决：用 /btw 确认状态，重开对话，第一句加「不要分析了，直接改文件」</p>
+    </div>
+    <div style="flex:0 0 500px;background:var(--tb);border-radius:20px;padding:56px;text-align:center;">
+      <div style="font-size:32px;color:var(--tm);margin-bottom:16px;">核心原则</div>
+      <div style="font-size:64px;font-weight:900;color:var(--or);line-height:1.2;margin-bottom:16px;">任务要<br>拆小</div>
+      <p style="font-size:26px;color:var(--tw);">每次只改一个文件</p>
+    </div>
+  </div>
+</section>
+
+<section data-label="部署上线" data-screen-label="19 部署" style="background:var(--dk);display:flex;flex-direction:column;justify-content:center;padding:100px 140px 80px;">
+  <h2 style="font-size:64px;font-weight:900;color:var(--tw);margin-bottom:56px;">部署上线</h2>
+  <div style="display:flex;gap:48px;align-items:stretch;">
+    <div style="flex:1;background:#1a1928;border-radius:16px;padding:44px;">
+      <div style="font-size:26px;color:var(--bl);font-weight:700;letter-spacing:2px;margin-bottom:24px;">流程</div>
+      <p style="font-size:32px;color:var(--tw);line-height:1.7;">从一开始就选了Cloudflare全家桶<br>代码 push → GitHub<br>Cloudflare Workers 自动部署</p>
+      <div style="margin-top:32px;font-size:28px;color:var(--or);font-weight:600;">极简，一键完成</div>
+    </div>
+    <div style="flex:1;background:#1a1928;border-radius:16px;padding:44px;">
+      <div style="font-size:26px;color:var(--or);font-weight:700;letter-spacing:2px;margin-bottom:24px;">遇到的问题</div>
+      <p style="font-size:32px;color:var(--tw);line-height:1.7;">国内访问 workers.dev 子域<br>经常超时——不是部署失败</p>
+      <div style="margin-top:32px;font-size:28px;color:var(--tm);">解决：绑定自己的域名</div>
+    </div>
+    <div style="flex:1;background:rgba(56,189,248,0.1);border-radius:16px;padding:44px;border:2px solid var(--bl);">
+      <div style="font-size:26px;color:var(--bl);font-weight:700;letter-spacing:2px;margin-bottom:24px;">架构升级</div>
+      <p style="font-size:32px;color:var(--tw);line-height:1.7;">静态前台 + 动态接口<br>从写死在tsx里<br>→ 数据库动态拉取</p>
+      <div style="margin-top:32px;font-size:28px;color:var(--bl);font-weight:600;">随时加内容，不改代码</div>
+    </div>
+  </div>
+</section>
+
+<section data-label="时间复盘" data-screen-label="20 时间复盘" style="background:var(--lt);display:flex;flex-direction:column;padding:72px 140px 60px;">
+  <h2 style="font-size:52px;font-weight:700;color:var(--tb);margin-bottom:12px;">总共花了多少时间</h2>
+  <p style="font-size:30px;color:var(--tm);margin-bottom:48px;">分散在一周内完成，每天1-2小时</p>
+  <div style="display:flex;flex-direction:column;gap:20px;flex:1;justify-content:center;">
+    <div style="display:flex;align-items:center;gap:32px;">
+      <div style="font-size:28px;color:var(--tb);min-width:300px;">素材整理和定位</div>
+      <div style="flex:1;background:#e8e4db;border-radius:6px;height:12px;overflow:hidden;"><div style="width:20%;height:100%;background:var(--or);border-radius:6px;"></div></div>
+      <div style="font-size:32px;font-weight:700;color:var(--tb);min-width:100px;text-align:right;">2h</div>
+      <div style="font-size:24px;color:var(--or);font-weight:600;min-width:200px;">最值得的2小时</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:32px;">
+      <div style="font-size:28px;color:var(--tb);min-width:300px;">设计迭代</div>
+      <div style="flex:1;background:#e8e4db;border-radius:6px;height:12px;overflow:hidden;"><div style="width:15%;height:100%;background:var(--pu);border-radius:6px;"></div></div>
+      <div style="font-size:32px;font-weight:700;color:var(--tb);min-width:100px;text-align:right;">1.5h</div>
+      <div style="font-size:24px;color:var(--tm);min-width:200px;"></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:32px;">
+      <div style="font-size:28px;color:var(--tb);min-width:300px;">数据库 + 后台开发</div>
+      <div style="flex:1;background:#e8e4db;border-radius:6px;height:12px;overflow:hidden;"><div style="width:35%;height:100%;background:var(--bl);border-radius:6px;"></div></div>
+      <div style="font-size:32px;font-weight:700;color:var(--tb);min-width:100px;text-align:right;">3-4h</div>
+      <div style="font-size:24px;color:var(--tm);min-width:200px;">分4步，每步不到1h</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:32px;">
+      <div style="font-size:28px;color:var(--tb);min-width:300px;">前端动画</div>
+      <div style="flex:1;background:#e8e4db;border-radius:6px;height:12px;overflow:hidden;"><div style="width:20%;height:100%;background:var(--or);border-radius:6px;"></div></div>
+      <div style="font-size:32px;font-weight:700;color:var(--tb);min-width:100px;text-align:right;">2h</div>
+      <div style="font-size:24px;color:var(--tm);min-width:200px;">含踩坑时间</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:32px;">
+      <div style="font-size:28px;color:var(--tb);min-width:300px;">部署和调试</div>
+      <div style="flex:1;background:#e8e4db;border-radius:6px;height:12px;overflow:hidden;"><div style="width:5%;height:100%;background:var(--pu);border-radius:6px;"></div></div>
+      <div style="font-size:32px;font-weight:700;color:var(--tb);min-width:100px;text-align:right;">0.5h</div>
+      <div style="font-size:24px;color:var(--tm);min-width:200px;"></div>
+    </div>
+  </div>
+  <div style="margin-top:24px;padding:24px 40px;background:var(--or);border-radius:10px;display:flex;align-items:center;gap:24px;">
+    <span style="font-size:64px;font-weight:900;color:#fff;">≈ 10小时</span>
+    <span style="font-size:32px;color:rgba(255,255,255,0.8);">分散在一周内完成</span>
+  </div>
+</section>
+
+<section data-label="7步行动清单" data-screen-label="21 7步清单" style="background:var(--dk);display:flex;flex-direction:column;padding:72px 140px 60px;">
+  <h2 style="font-size:52px;font-weight:700;color:var(--tw);margin-bottom:12px;">你也想做，按这个顺序</h2>
+  <p style="font-size:28px;color:var(--tm);margin-bottom:40px;">普通人复用这套方法的7步行动清单</p>
+  <div style="display:flex;flex-direction:column;gap:16px;flex:1;justify-content:center;">
+    <div style="display:flex;align-items:center;gap:32px;background:#1a1928;border-radius:10px;padding:22px 32px;">
+      <span style="font-size:28px;font-weight:900;color:var(--or);min-width:36px;">1</span>
+      <span style="font-size:28px;color:var(--tw);">写一句「事实版」自我介绍，去掉所有形容词</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:32px;background:#1a1928;border-radius:10px;padding:22px 32px;">
+      <span style="font-size:28px;font-weight:900;color:var(--or);min-width:36px;">2</span>
+      <span style="font-size:28px;color:var(--tw);">列出3-5个项目，每个填6字段卡片</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:32px;background:#1a1928;border-radius:10px;padding:22px 32px;">
+      <span style="font-size:28px;font-weight:900;color:var(--or);min-width:36px;">3</span>
+      <span style="font-size:28px;color:var(--tw);">翻你的数字痕迹——后台数据、GitHub、过去的文档</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:32px;background:#1a1928;border-radius:10px;padding:22px 32px;">
+      <span style="font-size:28px;font-weight:900;color:var(--or);min-width:36px;">4</span>
+      <span style="font-size:28px;color:var(--tw);">做取舍——不是所有素材都该放</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:32px;background:#1a1928;border-radius:10px;padding:22px 32px;">
+      <span style="font-size:28px;font-weight:900;color:var(--or);min-width:36px;">5</span>
+      <span style="font-size:28px;color:var(--tw);">先出设计图，锁定方向，迭代改变量不改结构</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:32px;background:#1a1928;border-radius:10px;padding:22px 32px;">
+      <span style="font-size:28px;font-weight:900;color:var(--or);min-width:36px;">6</span>
+      <span style="font-size:28px;color:var(--tw);">分步给AI指令——先架构后功能，每步一个文件</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:32px;background:rgba(249,115,22,0.15);border-radius:10px;padding:22px 32px;border:1px solid var(--or);">
+      <span style="font-size:28px;font-weight:900;color:var(--or);min-width:36px;">7</span>
+      <span style="font-size:28px;color:var(--tw);">最后打磨细节——一句签名，让网站有态度</span>
+    </div>
+  </div>
+</section>
+
+<section data-label="核心洞察" data-screen-label="22 核心洞察" style="background:var(--dk);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:100px 180px 80px;text-align:center;">
+  <div style="font-size:28px;color:var(--tm);letter-spacing:4px;margin-bottom:48px;">TAKEAWAY</div>
+  <p style="font-size:52px;font-weight:300;color:var(--tm);line-height:1.5;margin-bottom:32px;">整个过程里，AI做的只是最后的执行</p>
+  <p style="font-size:60px;font-weight:700;color:var(--tw);line-height:1.5;margin-bottom:48px;">放什么不放什么、选什么风格<br>数据库用哪个、任务怎么拆<br><span style="color:var(--or);">全都得靠你自己</span></p>
+  <div style="width:80px;height:3px;background:var(--or);margin:0 auto 48px;"></div>
+  <p style="font-size:36px;color:var(--tm);font-weight:300;">这个判断的能力，是AI时代每个人最值得投资的东西</p>
+</section>
+
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { current: 0, total: 22 };
+
+  componentDidMount() {
+    this._stage = document.querySelector('deck-stage');
+    this._injectTrailCSS();
+    this._buildCursor();
+
+    // count actual slides
+    const tot = this._stage ? this._stage.querySelectorAll('section').length : 22;
+    if (tot > 0) this.setState({ total: tot });
+
+    // listen for stage slide changes
+    const onSlide = (e) => {
+      const idx = typeof e.detail?.index === 'number' ? e.detail.index
+                : typeof e.detail?.slide === 'number' ? e.detail.slide : null;
+      if (idx !== null) this.setState({ current: idx });
+    };
+    ['slide-change','slidechange','slide'].forEach(n =>
+      this._stage?.addEventListener(n, onSlide)
+    );
+
+    // poll currentIndex as fallback (keyboard nav etc.)
+    this._poll = setInterval(() => {
+      const s = document.querySelector('deck-stage');
+      if (s && typeof s.currentIndex === 'number' && s.currentIndex !== this.state.current) {
+        this.setState({ current: s.currentIndex });
+      }
+    }, 250);
+
+    // mouse wheel navigation
+    const onWheel = (e) => {
+      e.preventDefault();
+      const { current, total } = this.state;
+      if (e.deltaY > 20 && current < total - 1) this._goTo(current + 1);
+      else if (e.deltaY < -20 && current > 0) this._goTo(current - 1);
+    };
+    window.addEventListener('wheel', onWheel, { passive: false });
+    this._cleanWheel = () => window.removeEventListener('wheel', onWheel);
+  }
+
+  componentWillUnmount() {
+    this._cleanWheel?.();
+    this._cleanCursor?.();
+    clearInterval(this._poll);
+    this._cursorEl?.remove();
+    this._trailStyleEl?.remove();
+    document.documentElement.style.cursor = '';
+  }
+
+  _injectTrailCSS() {
+    const s = document.createElement('style');
+    s.textContent = `@keyframes pxTrail { 0%{opacity:1;transform:scale(1)} 100%{opacity:0;transform:scale(0.05)} }`;
+    document.head.appendChild(s);
+    this._trailStyleEl = s;
+  }
+
+  _buildCursor() {
+    document.documentElement.style.cursor = 'none';
+    const el = document.createElement('div');
+    el.style.cssText = 'position:fixed;pointer-events:none;z-index:999998;opacity:0;transition:opacity 0.1s;';
+    document.body.appendChild(el);
+    this._cursorEl = el;
+
+    let stopTimer, lastSpawn = 0;
+    const onMove = (e) => {
+      const x = e.clientX, y = e.clientY;
+      el.style.left = x + 'px';
+      el.style.top = y + 'px';
+      el.style.opacity = '0';
+      clearTimeout(stopTimer);
+      const now = Date.now();
+      if (now - lastSpawn > 28) { this._spawnTrail(x, y); lastSpawn = now; }
+      stopTimer = setTimeout(() => {
+        const right = x > window.innerWidth / 2;
+        el.innerHTML = this._arrowSVG(right);
+        el.style.transform = `translate(${right ? '-6px' : '-50px'}, -28px)`;
+        el.style.opacity = '1';
+      }, 130);
+    };
+    document.addEventListener('mousemove', onMove);
+    this._cleanCursor = () => { document.removeEventListener('mousemove', onMove); clearTimeout(stopTimer); };
+  }
+
+  _arrowSVG(right) {
+    const r = right
+      ? `<rect x="5" y="0" width="2" height="2" fill="#FFE600"/>
+         <rect x="6" y="2" width="3" height="2" fill="#FFE600"/>
+         <rect x="0" y="3" width="9" height="3" fill="#FFE600"/>
+         <rect x="6" y="6" width="3" height="2" fill="#FFE600"/>
+         <rect x="5" y="8" width="2" height="2" fill="#FFE600"/>`
+      : `<rect x="2" y="0" width="2" height="2" fill="#FFE600"/>
+         <rect x="0" y="2" width="3" height="2" fill="#FFE600"/>
+         <rect x="0" y="3" width="9" height="3" fill="#FFE600"/>
+         <rect x="0" y="6" width="3" height="2" fill="#FFE600"/>
+         <rect x="2" y="8" width="2" height="2" fill="#FFE600"/>`;
+    return `<svg width="54" height="60" viewBox="0 0 9 10" style="image-rendering:pixelated;shape-rendering:crispEdges;filter:drop-shadow(0 0 8px #FFE600) drop-shadow(0 0 2px #FFE600);">${r}</svg>`;
+  }
+
+  _spawnTrail(x, y) {
+    const cols = ['#FFE600','#FFFF00','#FFF176','#FFD600','#FFFDE7','#FFC400'];
+    const count = 3 + Math.floor(Math.random() * 3);
+    for (let i = 0; i < count; i++) {
+      const px = document.createElement('div');
+      const size = 4 + Math.floor(Math.random() * 10);
+      const ox = (Math.random() - 0.5) * 20;
+      const oy = (Math.random() - 0.5) * 20;
+      const dur = 350 + Math.floor(Math.random() * 250);
+      px.style.cssText = `position:fixed;pointer-events:none;z-index:99997;` +
+        `left:${x + ox - size / 2}px;top:${y + oy - size / 2}px;` +
+        `width:${size}px;height:${size}px;` +
+        `background:${cols[Math.floor(Math.random() * cols.length)]};` +
+        `animation:pxTrail ${dur}ms ease-out forwards;`;
+      document.body.appendChild(px);
+      setTimeout(() => px.remove(), dur + 60);
+    }
+  }
+
+  _goTo(n) {
+    const idx = Math.max(0, Math.min(this.state.total - 1, n));
+    this._stage?.goTo(idx);
+    this.setState({ current: idx });
+  }
+
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

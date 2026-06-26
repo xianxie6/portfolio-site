@@ -1,6 +1,18 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "portfolio-site",
-  "compatibility_date": "2026-06-12",
-  "pages_build_output_dir": "./out"
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-06-24",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "portfolio-db",
+      "database_id": "889303d2-2a50-458c-8ba5-1d8d0c889275"
+    }
+  ]
 }

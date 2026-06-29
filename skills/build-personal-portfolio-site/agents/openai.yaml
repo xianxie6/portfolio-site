@@ -1,0 +1,7 @@
+interface:
+  display_name: "个人网站作品集生成"
+  short_description: "从个人经历和项目素材生成可上线作品集网站"
+  default_prompt: "Use $build-personal-portfolio-site to plan, write, implement, and deploy my personal portfolio website."
+
+policy:
+  allow_implicit_invocation: true
